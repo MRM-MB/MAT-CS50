@@ -34,13 +34,25 @@ To manage expectations regarding the scope of this application:
 You don't need to be a tech expert to use MAT! Here is how it works:
 
 ### Requirements
-*   **Same Network:** You and the person you are sharing files with must be connected to the **same Wi-Fi** or **Local Network (LAN)**. This app works like a direct line between computers in the same building.
+*   **Same Network:** You and the person you are sharing files with must be connected to the **same Wi-Fi** or **Local Network (LAN)**.
 
-### How to Share
-1.  **Upload:** Open the app in your browser, choose your file, and click upload.
-2.  **Get the Link:** The app will generate a link for you (e.g., `http://192.168.1.5:3000/file/123`).
-3.  **Share:** Copy that link and send it to your colleague via email, chat, or sticky note.
-4.  **Download:** They just need to paste that link into their browser to start the download immediately.
+### How to Share (Important!)
+To generate a link that works for others on your network, you must access the app using your computer's **IP Address**, not `localhost`.
+
+1.  **Find your IP Address:**
+    *   **Windows:** Open Command Prompt (cmd) and type `ipconfig`. Look for "IPv4 Address" (e.g., `192.168.1.15`).
+    *   **Mac/Linux:** Open Terminal and type `ifconfig` (or `ip a`). Look for `inet` under your active connection.
+
+2.  **Open the App:**
+    *   Instead of `http://localhost:3000`, enter `http://<YOUR_IP_ADDRESS>:3000` in your browser (e.g., `http://192.168.1.15:3000`).
+
+3.  **Upload & Share:**
+    *   Upload your file.
+    *   The generated link will now contain your IP address automatically.
+    *   Share this link with anyone on the same Wi-Fi/Network.
+
+### Troubleshooting
+*   **Firewall:** If others cannot access the link, check your computer's firewall settings to ensure Node.js is allowed to accept incoming connections.
 
 ## Technologies Used
 This project is built using a robust JavaScript stack:
