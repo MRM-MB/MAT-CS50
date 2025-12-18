@@ -30,11 +30,23 @@ To manage expectations regarding the scope of this application:
     *   Files are stored securely on the server's filesystem.
 *   **Download Tracking:** Keeps track of how many times a file has been downloaded.
 
+## User Guide (For Everyone)
+You don't need to be a tech expert to use MAT! Here is how it works:
+
+### Requirements
+*   **Same Network:** You and the person you are sharing files with must be connected to the **same Wi-Fi** or **Local Network (LAN)**. This app works like a direct line between computers in the same building.
+
+### How to Share
+1.  **Upload:** Open the app in your browser, choose your file, and click upload.
+2.  **Get the Link:** The app will generate a link for you (e.g., `http://192.168.1.5:3000/file/123`).
+3.  **Share:** Copy that link and send it to your colleague via email, chat, or sticky note.
+4.  **Download:** They just need to paste that link into their browser to start the download immediately.
+
 ## Technologies Used
 This project is built using a robust JavaScript stack:
 *   **Runtime:** [Node.js](https://nodejs.org/)
 *   **Framework:** [Express.js](https://expressjs.com/) - Handles routing and server logic.
-*   **Database:** [MySQL](https://www.mysql.com/) with [Sequelize ORM](https://sequelize.org/) - Used for storing file metadata and hashed passwords. (Note: Previous versions may have used MongoDB, but this version is built on SQL).
+*   **Database:** [MySQL](https://www.mysql.com/) with [Sequelize ORM](https://sequelize.org/) - Used for storing file metadata and hashed passwords.
 *   **Templating:** [EJS](https://ejs.co/) - For rendering dynamic HTML views.
 *   **File Handling:** [Multer](https://github.com/expressjs/multer) - Middleware for handling `multipart/form-data`.
 *   **Security:** [Bcrypt](https://www.npmjs.com/package/bcrypt) - For password hashing.
