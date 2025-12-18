@@ -30,30 +30,6 @@ To manage expectations regarding the scope of this application:
     *   Files are stored securely on the server's filesystem.
 *   **Download Tracking:** Keeps track of how many times a file has been downloaded.
 
-## User Guide (For Everyone)
-You don't need to be a tech expert to use MAT! Here is how it works:
-
-### Requirements
-*   **Same Network:** You and the person you are sharing files with must be connected to the **same Wi-Fi** or **Local Network (LAN)**.
-
-### How to Share (Important!)
-To generate a link that works for others on your network, you must access the app using your computer's **IP Address**, not `localhost`.
-
-1.  **Find your IP Address:**
-    *   **Windows:** Open Command Prompt (cmd) and type `ipconfig`. Look for "IPv4 Address" (e.g., `192.168.1.15`).
-    *   **Mac/Linux:** Open Terminal and type `ifconfig` (or `ip a`). Look for `inet` under your active connection.
-
-2.  **Open the App:**
-    *   Instead of `http://localhost:3000`, enter `http://<YOUR_IP_ADDRESS>:3000` in your browser (e.g., `http://192.168.1.15:3000`).
-
-3.  **Upload & Share:**
-    *   Upload your file.
-    *   The generated link will now contain your IP address automatically.
-    *   Share this link with anyone on the same Wi-Fi/Network.
-
-### Troubleshooting
-*   **Firewall:** If others cannot access the link, check your computer's firewall settings to ensure Node.js is allowed to accept incoming connections.
-
 ## Technologies Used
 This project is built using a robust JavaScript stack:
 *   **Runtime:** [Node.js](https://nodejs.org/)
@@ -64,13 +40,14 @@ This project is built using a robust JavaScript stack:
 *   **Security:** [Bcrypt](https://www.npmjs.com/package/bcrypt) - For password hashing.
 *   **Frontend:** HTML5, CSS3, JavaScript.
 
-## How to Run
+## Installation & Setup (For the Host)
+*This section is for the person setting up the application on their computer (the "Host").*
 
 ### Prerequisites
 *   Node.js installed.
 *   MySQL Server installed and running.
 
-### Installation
+### Step-by-Step Installation
 1.  **Clone the repository:**
     ```bash
     git clone <repository-url>
@@ -104,8 +81,28 @@ This project is built using a robust JavaScript stack:
     npm start
     ```
 
-6.  **Access the App:**
-    Open your browser and navigate to `http://localhost:3000`.
+## How to Use MAT
+*Once the server is running, follow these steps to share files with others on your network.*
+
+### 1. Accessing the App (Important!)
+To share files with others, you must access the app using your computer's **IP Address**, not `localhost`.
+*   **Note:** You do **NOT** need to change any code or configuration files. The app automatically detects the address you use in your browser.
+
+**Find your IP Address:**
+*   **Windows:** Open Command Prompt (`cmd`) -> type `ipconfig` -> look for **IPv4 Address** (e.g., `192.168.1.15`).
+*   **Mac/Linux:** Open Terminal -> type `ifconfig` -> look for `inet` address.
+
+**Open in Browser:**
+*   **Host (You):** Go to `http://<YOUR_IP>:3000` (e.g., `http://192.168.1.15:3000`).
+*   **Others:** They will use the link you generate, which will look exactly like the one above.
+
+### 2. Sharing a File
+1.  **Upload:** Select your file (up to 500MB) and click upload.
+2.  **Get Link:** The app generates a unique link.
+3.  **Share:** Send this link to anyone on your Wi-Fi/LAN.
+
+### 3. Troubleshooting
+*   **Firewall:** If others cannot open the link, check your computer's firewall settings to ensure Node.js is allowed to accept incoming connections on port 3000.
 
 ## Security Note
 This application was developed as a learning project. While it implements standard security practices like password hashing, it is recommended to use it within a trusted local network environment.
