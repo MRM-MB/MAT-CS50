@@ -1,31 +1,87 @@
-# MAT My Application Transfer - Manish Raj -
-#### Video Demo:  <URL HERE>
-#### All about MAT:
-This is my final project for CS50x - 2022 -> "MAT" My Application Transfer
+# MAT - My Application Transfer
 
-This app will allow a user to upload a file (check supported files 👇 below) up to 500MB. 
-Once uploaded the file, the user will obtain a sharable link for certain file which can be shared via email or other similar services to a recipient, who can now use to download the transfered file.
+![MAT Home Page](Images/main_page.png)
 
-🔐 MAT will also provide a feature to secure your transfered file with a password, which the receiver must enter to download such file.
+## CS50 Final Project 2022
+This project was submitted as my final project for **CS50x 2022**. It demonstrates the application of web development concepts learned throughout the course, specifically focusing on backend development with Node.js and database management.
 
-#### Why this project ❓
-The aim of this project was to create an easy way to transfer heavy files with a simple sharable link, without relying upon other cloud-based storage services whcih you can only use by creating an account. Where you would give aditional data, like you email, name, country or origin, etc. MAT will share your files without asking or storing any personal information, you just upload your file and MAT will provide you with a link, as simple as that.
+**Video Demo:** [Watch on YouTube](https://www.youtube.com/watch?v=MXoXEOab6wM)
 
-#### Structure of the project
-MAT was created mostly using Javascript. The fronted of this app was build using html, css and js mainly for the greeting page and to bring style to my .ejs files. For the backend I used js as the main language, I implemented Node.js for the localhost server, routing and password management. Express and Mongoodb as the database for the files that the user uploads into my web app. Embedded JavaScript Templating files where also used to build MAT to better structure with html.
+## About The Project
+MAT is designed as a simple, efficient file sharing solution intended for use on a local network (LAN). It serves as a "common space" for offices or small groups to easily transfer files between machines without the need for external cloud services, accounts, or complex setups.
 
-#### MAT supports the following file formats:
+### Core Philosophy
+The goal was to create a tool that is strictly for **transferring** files.
+*   **No Account Required:** Users do not need to register or provide personal data.
+*   **Privacy Focused:** No emails, names, or tracking.
+*   **Simple Workflow:** Upload -> Get Link -> Share -> Download.
 
-**Video** -> MP4, GIF, GIFV, MKV, WEBM, FLV, VOB, OGG, 
-OGV, DRC, MNG, AVI, WMV, YUV, RMVB, AMV, MOV, AVCHD, VIV.
+### Important Clarification
+To manage expectations regarding the scope of this application:
+*   **No "Fast Search":** This is not a file management system with a searchable index of all uploaded files. It is a transfer tool where you need the specific link to access a file.
+*   **No "Modify Anything":** Once a file is uploaded, it cannot be modified or edited within the app. This ensures the integrity of the transferred data.
 
-**Audio** -> MP3, 3GP, AA, AAX, AIFF, ALAC, DVF, M4P, MPC, MSV, 
-OGG, OGA, MOG, WEBM, CDA, PCM, WAV, AIFF, AAC, WMA, FLAC.
+## Features
+*   **File Upload:** Supports files up to 500MB.
+*   **Wide Format Support:** Compatible with a vast array of file types including Videos, Audio, Images, Code files, and Documents (PDF, DOC, etc.).
+*   **Password Protection:** Users can optionally secure their uploads with a password.
+*   **Security:**
+    *   Passwords are **hashed** using `bcrypt` before being stored in the database. They are never stored in plain text.
+    *   Files are stored securely on the server's filesystem.
+*   **Download Tracking:** Keeps track of how many times a file has been downloaded.
 
-**Image** -> JPEG, PNG, SVG, WEBP, AVIF, BMP, ICO, TIFF.
+## Technologies Used
+This project is built using a robust JavaScript stack:
+*   **Runtime:** [Node.js](https://nodejs.org/)
+*   **Framework:** [Express.js](https://expressjs.com/) - Handles routing and server logic.
+*   **Database:** [MySQL](https://www.mysql.com/) with [Sequelize ORM](https://sequelize.org/) - Used for storing file metadata and hashed passwords. (Note: Previous versions may have used MongoDB, but this version is built on SQL).
+*   **Templating:** [EJS](https://ejs.co/) - For rendering dynamic HTML views.
+*   **File Handling:** [Multer](https://github.com/expressjs/multer) - Middleware for handling `multipart/form-data`.
+*   **Security:** [Bcrypt](https://www.npmjs.com/package/bcrypt) - For password hashing.
+*   **Frontend:** HTML5, CSS3, JavaScript.
 
-**Programming Languages, Markup and Style sheets** -> ASPX, AXD, ASX, ASMX, ASHX, CSS, CFM, YAWS, SWF, HTML, 
-HTM, XHTML, JHTML, JSP, JSPX, WSS, JS, PL, PHP, PHP4, PHP3, PHTML, PY, RB, RHTML, SHTML, XML, RSS, DB.
+## How to Run
 
-**Other Supported Files** -> PDF, DOC, XLS, TXT, PPT, ODT, RTF, BLEND, MA, FBX, DAE, 3DS, OBJ, FBX, USDZ, 
-STL, STP, GLTF, 3MF.
+### Prerequisites
+*   Node.js installed.
+*   MySQL Server installed and running.
+
+### Installation
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd MAT-CS50
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Configure Environment Variables:**
+    Create a `.env` file in the root directory with your database configuration:
+    ```env
+    PORT=3000
+    DB_HOST=localhost
+    DB_USER=your_mysql_user
+    DB_PASSWORD=your_mysql_password
+    DB_NAME=transfer
+    DB_DIALECT=mysql
+    ```
+
+4.  **Initialize the Database:**
+    Run the initialization script to create the database:
+    ```bash
+    npm run db:init
+    ```
+
+5.  **Start the Server:**
+    ```bash
+    npm start
+    ```
+
+6.  **Access the App:**
+    Open your browser and navigate to `http://localhost:3000`.
+
+## Security Note
+This application was developed as a learning project. While it implements standard security practices like password hashing, it is recommended to use it within a trusted local network environment.
