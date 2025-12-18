@@ -22,6 +22,10 @@ sequelize.sync().then(() => {
 app.set("view engine", "ejs")
 
 app.get("/", (req, res) => {
+    res.render("landing")
+})
+
+app.get("/share", (req, res) => {
     res.render("index")
 })
 

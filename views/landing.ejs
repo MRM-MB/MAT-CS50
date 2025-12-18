@@ -1,0 +1,97 @@
+<!--  _ _ _       _                            _             _____  _____  _____  -->
+<!-- | | | | ___ | | ___  ___  _____  ___     | |_  ___     |     ||  _  ||_   _| -->
+<!-- | | | || -_|| ||  _|| . ||     || -_|    |  _|| . |    | | | ||     |  | |   -->
+<!-- |_____||___||_||___||___||_|_|_||___|    |_|  |___|    |_|_|_||__|__|  |_|   -->
+
+<!-- MAT: My Amazon Tracker  made by Manish Raj -->
+<!-- This is an Amazon price tracker for my CS50 final project -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <!-- Connect CSS -->
+  <link rel="stylesheet" href="/assets/landing.css">
+  <meta charset="UTF-8">
+  <title>MAT - Manish Raj</title>
+
+  <!-- Imported fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Alert message for user -->
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <a href="https://cs50.harvard.edu/x/2022/" target="_blank">
+    This is my final project for Harvard CS50x 😺
+  </a>
+  </div>
+  
+</head>
+<body>
+
+  <!-- Company name -->
+<div id="container">
+    <h1 class="apple">MAT</h1>
+    <!-- Made by: -->
+  <div id="end">
+    <p>- Made by Manish Raj -</p>
+  </div>
+
+  <!-- Company name expanded -->
+<div id="beginning">
+    <h2> <span>M</span>y <span>A</span>pplication <span>T</span>ransfer</h2>
+    <br>
+
+    <!-- Button for Next Page -->
+    <button class="button-upload2" onclick="location.href='/share'" type="button">Start Sharing</button>
+</div>
+     <br>
+    <!-- Information Button -->
+    <button id="popupbtn" class="button">What is MAT ?</button>
+
+<!-- Popup message for information Button -->
+<div class="popup">
+  <div class="popcard">
+    <h4><span>MAT</span> "My Application Transfer" helps to ease the file sharing experience.</h4>
+    <h4>It will allow you to share files up to 500 MB via a generated sharable link, <span>MAT</span> 
+      will also enable you to share such files with a customizable password, 
+      which the recipient must enter in order to download the shared files.
+      
+      <h4><span>MAT</span> supports the following files:</h4>
+    </h4>
+<h3>
+<span class="category">🎥 Video -></span> <span class="matt">MP4, GIF, GIFV, MKV, WEBM, FLV, VOB, OGG, OGV, DRC, MNG, AVI, WMV, YUV, RMVB, AMV, MOV, AVCHD, VIV.</span>
+
+<br><br>
+
+<span class="category">🎧 Audio -></span> <span class="matt">MP3, 3GP, AA, AAX, AIFF, ALAC, DVF, M4P, MPC, MSV, OGG, OGA, MOG, WEBM, CDA, PCM, WAV, AIFF, AAC, WMA, FLAC.</span>
+
+<br><br>
+
+<span class="category">⛺ Image -></span> <span class="matt">JPEG, PNG, SVG, WEBP, AVIF, BMP, ICO, TIFF.</span>
+
+<br><br>
+
+<span class="category">👨‍💻 Programming, Markup and Style Languages -></span> <span class="matt">ASPX, AXD, ASX, ASMX, ASHX, CSS, CFM, YAWS, SWF, HTML, HTM, XHTML, JHTML, JSP, JSPX, WSS, JS, PL, PHP, PHP4, PHP3, PHTML, PY, RB, RHTML, SHTML, XML, RSS, DB.</span>
+
+<br><br>
+
+<span class="category">📄 Other Supported Files -></span> <span class="matt">PDF, DOC, XLS, TXT, PPT, ODT, RTF, BLEND, MA, FBX, DAE, 3DS, OBJ, FBX, USDZ, STL, STP, GLTF, 3MF.</span>
+</h3>
+  </div>
+</div>
+
+<!-- Firework Display -->
+<div class="firework"></div>
+
+<!-- Welcome display -->
+<section class="container">
+  <h1 class="title">
+    <span>An easy way to share files</span>
+  </h1>
+    
+<!-- Connect JS -->
+  <script  src="/assets/landing.js"></script>
+</body>
+</html>
