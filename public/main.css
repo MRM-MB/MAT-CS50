@@ -1,0 +1,367 @@
+/* Body */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
+    background-image: url("https://i.pinimg.com/originals/46/72/95/467295a7bf1b28ada111197be739ddaf.jpg");
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .flash-animation {
+	
+    /* Title animation */
+    
+    background: url('https://png.pngtree.com/thumb_back/fh260/background/20200808/pngtree-abstract-paper-hexagon-white-background-light-and-shadow-vector-image_388925.jpg');
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 150px;
+    font-weight: 900;
+    animation: slice 3s, dynamic 7s infinite alternate linear;
+    white-space: nowrap;
+    
+  }
+  
+  * {
+    user-select: none;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .apple {
+      font-size: 70px;
+    }
+  }
+  
+  @keyframes slice {
+    
+    0% {	line-height: 0%; }
+    
+    100% {	line-height: 100%; }
+    
+  }
+  
+  @keyframes dynamic {
+    
+    0% {	background-position: 0% }
+    
+    100% {	background-position: 100%; }
+    
+  }
+
+ /* H1*/
+
+h1 {
+  font-family: 'Gugi', cursive;
+  text-transform: uppercase;
+  letter-spacing: 15pt;
+  font-size: 80pt;
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 15pt;
+}
+
+h3 {
+  letter-spacing: 1pt;
+  font-size: 14pt;
+  margin-bottom: 15px;
+}
+
+h4 {
+  letter-spacing: 1pt;
+  font-size: 15pt;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.matt{
+  font-family: 'Roboto', sans-serif;
+  word-spacing: 4pt;
+  text-align: right;
+  font-size: 13pt;
+  color: #1a1110;
+}
+
+.category{
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* Generated Share Link */
+
+.link-upload {
+  height: 40%;
+  width: auto;
+  color: rgb(255, 191, 80);
+  text-decoration: none;
+  user-select: all;
+
+}
+
+/* Form format */
+
+form {
+  display: grid; 
+  gap: 1rem; 
+  grid-template-columns:auto
+  auto 1fr; 
+  max-width: 400px; 
+  margin: 0 auto;
+  padding:20px;
+}
+
+/* Generate Link button */
+
+.button-upload {
+  grid-column: span 2;
+}
+
+.button-upload2 {
+  left: -.6%;
+
+}
+
+/* Form text design */
+
+.text {
+  letter-spacing: 2pt;
+  color: white;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Upload File button */
+
+.file-select {
+  position: relative;
+  display: inline-block;
+}
+
+.file-select::before {
+  background-color: coral;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  content: "select";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.file-select input[type="file"] {
+  opacity: 0;
+  width: 200px;
+  height: 32px;
+  display: inline-block;
+}
+
+#src-file1::before {
+  background-color: coral;
+  font-family: 'Gugi', cursive;
+  content: 'Upload a file';
+  margin-left: 15px;
+  color: white;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Password Dots Format */
+
+input[type='password'] {
+  font-family: Verdana;
+  letter-spacing: 0.125em;
+}
+
+/* Type Password Input */
+
+input[type=password] {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Button for next page */
+
+button{
+  border-radius: 5px;
+  font-family: 'Gugi', cursive;
+  background:#f49e36;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:50px;
+  font-size:2.2em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+
+button:hover{
+  background:#fff;
+  color:#000000;
+}
+
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #f49e36;
+  transition:400ms ease all;
+}
+
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+/* Stylized the <hr> tag */
+
+hr {
+  width:50%;
+  border: dashed;
+}
+
+/* Maker */
+
+#end {
+  font-weight: 900;
+  font-size: 15pt;
+  margin: 0;
+  text-align: bottom;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  padding: 15px 0;
+}
+
+/* Corner Message */
+
+.corner-banner {
+  font-family: 'Gugi', cursive;
+  font-size: 20pt;
+	position: absolute;
+	top: 90px;
+	left: -160px;
+	background-image: radial-gradient(circle, #F9A72B 0%, #FA9026 70%, #FB6C1F 100%);
+	position: absolute;
+	padding: 12px 90px;
+	transform: rotate(-45deg) translate(25%, 25%);
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	transition: all .2s ease;
+}
+
+/* Pop Up message */
+.alert {
+  letter-spacing: 2pt;
+  padding: 20px;
+  background-image: radial-gradient(circle, #b78cd2 0%, #9370db 70%, #7b68ee 100%);
+  color: white;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Close Pop Up message */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Text colored letters */
+span {
+  font-family: 'Gugi', cursive;
+  font-size: 20pt;
+  color: rgb(255, 255, 255);
+}
+
+/* Close when hovered Pop Up message */
+.closebtn:hover {
+  color: rgb(0, 0, 0);
+}
+
+/* Container for Pop Up message */
+.wrapper{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Banner for CS50x PROMO */
+a{
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+  transition: all .25s;
+}
+
+
+a:hover{
+  letter-spacing: 7px;
+}
+
+/* Popup message for button */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  color:#000000;
+}
+
+/* Display message */
+.popcard {
+  background-image: radial-gradient(circle, #b78cd2 0%, #9370db 70%, #7b68ee 100%);
+  margin: 10% auto;
+  padding: 40px;
+  width: 50%;
+  text-align: left;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 15px 0 black;
+}
+

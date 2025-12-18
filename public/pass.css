@@ -1,0 +1,217 @@
+/* Body */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
+    background-image: url("https://i.pinimg.com/originals/46/72/95/467295a7bf1b28ada111197be739ddaf.jpg");
+    background-repeat: no-repeat;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .flash-animation {
+	
+    /* Title animation */
+    
+    background: url('https://png.pngtree.com/thumb_back/fh260/background/20200808/pngtree-abstract-paper-hexagon-white-background-light-and-shadow-vector-image_388925.jpg');
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 150px;
+    font-weight: 900;
+    animation: slice 3s, dynamic 7s infinite alternate linear;
+    white-space: nowrap;
+    
+  }
+  
+  * {
+    user-select: none;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .apple {
+      font-size: 70px;
+    }
+  }
+  
+  @keyframes slice {
+    
+    0% {	line-height: 0%; }
+    
+    100% {	line-height: 100%; }
+    
+  }
+  
+  @keyframes dynamic {
+    
+    0% {	background-position: 0% }
+    
+    100% {	background-position: 100%; }
+    
+  }
+
+ /* H1*/
+
+h1 {
+  font-family: 'Gugi', cursive;
+  text-transform: uppercase;
+  letter-spacing: 15pt;
+  font-size: 80pt;
+  margin-bottom: 15px;
+}
+
+
+/* Pop Up message */
+.alert {
+    letter-spacing: 2pt;
+    padding: 20px;
+    background-image: radial-gradient(circle, #fd7066 0%, #fa4c4c 70%, #dc143c 100%);
+    color: white;
+    margin-bottom: 15px;
+    font-weight: bold;
+    align-items: center;
+  }
+  
+  /* Close Pop Up message */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Close when hovered Pop Up message */
+  .closebtn:hover {
+    color: rgb(0, 0, 0);
+  }
+
+.text {
+    letter-spacing: 2pt;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+.button-upload {
+    grid-column: span 4;
+  }
+
+form {
+    display: grid; 
+    gap: 1rem; 
+    grid-template-columns:auto
+    auto 1fr; 
+    max-width: 400px; 
+    margin: 0 auto;
+    padding:20px;
+  }
+
+/* Password Dots Format */
+
+input[type='password'] {
+    font-family: Verdana;
+    letter-spacing: 0.125em;
+  }
+  
+  /* Type Password Input */
+  
+input[type=password] {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  /* Maker */
+
+#end {
+    font-weight: 900;
+    font-size: 15pt;
+    margin: 0;
+    text-align: bottom;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    padding: 15px 0;
+  }
+
+/* Headers */
+h1 {
+    font-family: 'Gugi', cursive;
+    text-transform: uppercase;
+    letter-spacing: 15pt;
+    font-size: 20pt;
+    margin-bottom: 15px;
+  }
+
+  button{
+    border-radius: 5px;
+    font-family: 'Gugi', cursive;
+    background:#f49e36;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:50px;
+    font-size:2.2em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+  }
+  
+  button:hover{
+    background:#fff;
+    color:#000000;
+  }
+  
+  button:before,button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #f49e36;
+    transition:400ms ease all;
+  }
+  
+  button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  
+  button:hover:before,button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+
+/* Corner Message */
+
+.corner-banner {
+    font-family: 'Gugi', cursive;
+    font-size: 20pt;
+      position: absolute;
+      top: 120px;
+      left: -230px;
+      background-image: radial-gradient(circle, #F9A72B 0%, #FA9026 70%, #FB6C1F 100%);
+      position: absolute;
+      padding: 12px 90px;
+      transform: rotate(-45deg) translate(25%, 25%);
+      text-align: center;
+      text-decoration: none;
+      color: #ffffff;
+      transition: all .2s ease;
+  }
+
+  a {
+    text-decoration: none;
+  }

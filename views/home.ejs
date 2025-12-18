@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/main.css">
+    <title>MAT - Password File</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Roboto&display=swap" rel="stylesheet">
+          <!-- Alert message for user -->
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <a id="popupbtn" class="button">
+    Check if your file is supported
+  </a>
+  </div>
+  <!-- Popup message for information Button -->
+<div class="popup">
+    <div class="popcard">
+        
+        <h4><span>MAT</span> lets you upload up to a 500 MB file and supports the following extensions:</h4>
+      </h4>
+  <h3>
+  <span class="category">🎥 Video -></span> <span class="matt">MP4, GIF, GIFV, MKV, WEBM, FLV, VOB, OGG, OGV, DRC, MNG, AVI, WMV, YUV, RMVB, AMV, MOV, AVCHD, VIV.</span>
+  
+  <br><br>
+  
+  <span class="category">🎧 Audio -></span> <span class="matt">MP3, 3GP, AA, AAX, AIFF, ALAC, DVF, M4P, MPC, MSV, OGG, OGA, MOG, WEBM, CDA, PCM, WAV, AIFF, AAC, WMA, FLAC.</span>
+  
+  <br><br>
+  
+  <span class="category">⛺ Image -></span> <span class="matt">JPEG, PNG, SVG, WEBP, AVIF, BMP, ICO, TIFF.</span>
+  
+  <br><br>
+  
+  <span class="category">👨‍💻 Programming, Markup and Style Languages -></span> <span class="matt">ASPX, AXD, ASX, ASMX, ASHX, CSS, CFM, YAWS, SWF, HTML, HTM, XHTML, JHTML, JSP, JSPX, WSS, JS, PL, PHP, PHP4, PHP3, PHTML, PY, RB, RHTML, SHTML, XML, RSS, DB.</span>
+  
+  <br><br>
+  
+  <span class="category">📄 Other Supported Files -></span> <span class="matt">PDF, DOC, XLS, TXT, PPT, ODT, RTF, BLEND, MA, FBX, DAE, 3DS, OBJ, FBX, USDZ, STL, STP, GLTF, 3MF.</span>
+  </h3>
+    </div>
+  </div>
+  <script>
+  // Popup message for button "What is MAT ?"
+    let popup = document.querySelector(".popup"),
+        button = document.querySelector(".button");
+    
+    button.addEventListener("click", openPop);
+    
+    function openPop(){
+      popup.style.display = "Block";
+    }
+    
+    window.addEventListener("click", closePop);
+    
+    function closePop(e){
+      if(e.target == popup) {
+      popup.style.display = "none";
+    }
+    }
+    </script>
+</head>
+<body>
+    <div href="https://www.youtube.com/watch?v=3oFAJtFE8YU" target="_blank" class="corner-banner">
+        And this was<br>CS50x - 2022!
+    </div>
+    
+<div id="container">
+    <a><h1 class="flash-animation">MAT</h1></a>
+
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label class="text" for="file">File -></label>
+        <div class="file-select" id="src-file1" >
+        <input type="file" id="file" name="file" required />
+        </div>
+        <br>
+        <label class="text" for="password">Password -></label>
+        <input type="password" id="password" name="password" required />
+        <br>
+        <button class="button-upload" type="submit">Generate Link</button>
+    </form>
+
+    <br><br><br><br><hr>
+
+    <% if (locals.fileLink != null) { %> 
+        <div class="text">
+            📌 Share Link:
+            <a class="link-upload" href="<%= locals.fileLink %>" target="_blank"><%= locals.fileLink %></a>
+        </div>
+    <% } %>
+<hr>
+
+    <!-- Made by: -->
+    <div id="end">
+        <p>- Made by Manish Raj -</p>
+      </div>
+</body>
+</html>
