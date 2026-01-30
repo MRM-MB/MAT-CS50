@@ -12,7 +12,7 @@ MAT is designed as a simple, efficient file sharing solution intended for use on
 
 ## 🧪 Live Demo (Render) - Local setup below
 
-Try the hosted demo here: https://<your-render-url>.onrender.com/
+Try the hosted demo here: https://mat-cs50.onrender.com/
 
 ### What you can do in the demo
 *   Upload a file and get a shareable link.
