@@ -1,5 +1,7 @@
 require("dotenv").config()
 const multer = require("multer")
+const fs = require("fs")
+const path = require("path")
 const bcrypt = require("bcrypt")
 const File = require("./models/File")
 const sequelize = require("./config/database")
@@ -10,7 +12,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use("/assets", express.static("public"));
 
-const upload = multer({ dest: "uploads" })
+const uploadsDir = path.join(__dirname, "uploads")
+fs.mkdirSync(uploadsDir, { recursive: true })
+
+const upload = multer({ dest: uploadsDir })
 
 // Sync database
 sequelize.sync().then(() => {

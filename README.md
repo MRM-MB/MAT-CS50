@@ -10,6 +10,22 @@ This project was submitted as my final project for **CS50x 2022**. It demonstrat
 ## About The Project
 MAT is designed as a simple, efficient file sharing solution intended for use on a local network (LAN). It serves as a "common space" for offices or small groups to easily transfer files between machines without the need for external cloud services, accounts, or complex setups.
 
+## 🧪 Live Demo (Render) - Local setup below
+
+Try the hosted demo here: https://<your-render-url>.onrender.com/
+
+### What you can do in the demo
+*   Upload a file and get a shareable link.
+*   Download a file using the link.
+*   (Optional) Protect uploads with a password.
+
+### What the demo does not include
+*   Long-term file storage. Uploaded files are stored on ephemeral disk and will be deleted on restarts.
+
+### Important demo notes
+*   **Demo data resets periodically** (ephemeral storage). This demo is for demonstration only.
+*   Links may stop working after a restart because the uploaded files no longer exist.
+
 ### Core Philosophy
 The goal was to create a tool that is strictly for **transferring** files.
 *   **No Account Required:** Users do not need to register or provide personal data.
