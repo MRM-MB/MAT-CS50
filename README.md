@@ -26,13 +26,13 @@ Try the hosted demo here: https://<your-render-url>.onrender.com/
 *   **Demo data resets periodically** (ephemeral storage). This demo is for demonstration only.
 *   Links may stop working after a restart because the uploaded files no longer exist.
 
-### Core Philosophy
+## Core Philosophy
 The goal was to create a tool that is strictly for **transferring** files.
 *   **No Account Required:** Users do not need to register or provide personal data.
 *   **Privacy Focused:** No emails, names, or tracking.
 *   **Simple Workflow:** Upload -> Get Link -> Share -> Download.
 
-### Important Clarification
+## Important Clarification
 To manage expectations regarding the scope of this application:
 *   **No "Fast Search":** This is not a file management system with a searchable index of all uploaded files. It is a transfer tool where you need the specific link to access a file.
 *   **No "Modify Anything":** Once a file is uploaded, it cannot be modified or edited within the app. This ensures the integrity of the transferred data.
