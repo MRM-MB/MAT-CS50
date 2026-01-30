@@ -8,6 +8,7 @@ const sequelize = require("./config/database")
 
 const express = require("express")
 const app = express()
+app.set("trust proxy", 1)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use("/assets", express.static("public"));
