@@ -2,7 +2,7 @@ require("dotenv").config()
 const multer = require("multer")
 const fs = require("fs")
 const path = require("path")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
 const File = require("./models/File")
 const sequelize = require("./config/database")
 
