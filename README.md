@@ -2,123 +2,97 @@
 
 ![MAT Home Page](Images/main_page.png)
 
+## About the Project
+MAT is a simple file-sharing tool for local networks (LAN). It provides a quick way to upload a file, generate a link, and share it with others on the same network.
+
 ## CS50 Final Project 2022
-This project was submitted as my final project for **CS50x 2022**. It demonstrates the application of web development concepts learned throughout the course, specifically focusing on backend development with Node.js and database management.
+This project was submitted as my final project for **CS50x 2022**. It focuses on backend development with Node.js and database management.
 
 **Video Demo:** [Watch on YouTube](https://www.youtube.com/watch?v=MXoXEOab6wM)
 
-## About The Project
-MAT is designed as a simple, efficient file sharing solution intended for use on a local network (LAN). It serves as a "common space" for offices or small groups to easily transfer files between machines without the need for external cloud services, accounts, or complex setups.
-
-## 🧪 Live Demo (Render) - Local setup below
-
-Try the hosted demo here: https://mat-cs50.onrender.com/
-
-### What you can do in the demo
-*   Upload a file and get a shareable link.
-*   Download a file using the link.
-*   (Optional) Protect uploads with a password.
-
-### What the demo does not include
-*   Long-term file storage. Uploaded files are stored on ephemeral disk and will be deleted on restarts.
-
-### Important demo notes
-*   **Demo data resets periodically** (ephemeral storage). This demo is for demonstration only.
-*   Links may stop working after a restart because the uploaded files no longer exist.
-
 ## Core Philosophy
-The goal was to create a tool that is strictly for **transferring** files.
-*   **No Account Required:** Users do not need to register or provide personal data.
-*   **Privacy Focused:** No emails, names, or tracking.
-*   **Simple Workflow:** Upload -> Get Link -> Share -> Download.
+* **No Account Required**
+* **Privacy Focused** (no emails, names, or tracking)
+* **Simple Workflow:** Upload → Get Link → Share → Download
 
 ## Important Clarification
-To manage expectations regarding the scope of this application:
-*   **No "Fast Search":** This is not a file management system with a searchable index of all uploaded files. It is a transfer tool where you need the specific link to access a file.
-*   **No "Modify Anything":** Once a file is uploaded, it cannot be modified or edited within the app. This ensures the integrity of the transferred data.
+* **No "Fast Search":** This is not a searchable file manager. You need the link to access a file.
+* **No "Modify Anything":** Uploaded files cannot be edited inside the app.
 
 ## Features
-*   **File Upload:** Supports files up to 500MB.
-*   **Wide Format Support:** Compatible with a vast array of file types including Videos, Audio, Images, Code files, and Documents (PDF, DOC, etc.).
-*   **Password Protection:** Users can optionally secure their uploads with a password.
-*   **Security:**
-    *   Passwords are **hashed** using `bcrypt` before being stored in the database. They are never stored in plain text.
-    *   Files are stored securely on the server's filesystem.
-*   **Download Tracking:** Keeps track of how many times a file has been downloaded.
+* File upload (up to 500MB)
+* Password-protected links
+* Download tracking
 
-## Technologies Used
-This project is built using a robust JavaScript stack:
-*   **Runtime:** [Node.js](https://nodejs.org/)
-*   **Framework:** [Express.js](https://expressjs.com/) - Handles routing and server logic.
-*   **Database:** [MySQL](https://www.mysql.com/) with [Sequelize ORM](https://sequelize.org/) - Used for storing file metadata and hashed passwords.
-*   **Templating:** [EJS](https://ejs.co/) - For rendering dynamic HTML views.
-*   **File Handling:** [Multer](https://github.com/expressjs/multer) - Middleware for handling `multipart/form-data`.
-*   **Security:** [Bcrypt](https://www.npmjs.com/package/bcrypt) - For password hashing.
-*   **Frontend:** HTML5, CSS3, JavaScript.
+## ✅ Two ways to try MAT
 
-## Installation & Setup (For the Host)
-*This section is for the person setting up the application on their computer (the "Host").*
+### 1) 🧪 Live Demo (Render)
+Try the hosted demo here: https://mat-cs50.onrender.com/
+
+**Note:** This demo uses ephemeral storage. Data resets on restarts, so links may stop working.
+
+### 2) 💻 Run locally (LAN)
+Run the app on your own network so files persist with MySQL and sharing works within your LAN.
+
+## Local Setup (MySQL)
 
 ### Prerequisites
-*   Node.js installed.
-*   MySQL Server installed and running.
+* Node.js
+* MySQL Server
 
-### Step-by-Step Installation
-1.  **Clone the repository:**
-    ```bash
-    git clone <repository-url>
-    cd MAT-CS50
-    ```
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd MAT-CS50
+   ```
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-3.  **Configure Environment Variables:**
-    Create a `.env` file in the root directory with your database configuration:
-    ```env
-    PORT=3000
-    DB_HOST=localhost
-    DB_USER=your_mysql_user
-    DB_PASSWORD=your_mysql_password
-    DB_NAME=transfer
-    DB_DIALECT=mysql
-    ```
+3. Create a `.env` file:
+   ```env
+   PORT=3000
+   DB_HOST=localhost
+   DB_USER=your_mysql_user
+   DB_PASSWORD=your_mysql_password
+   DB_NAME=transfer
+   DB_DIALECT=mysql
+   ```
 
-4.  **Initialize the Database:**
-    Run the initialization script to create the database:
-    ```bash
-    npm run db:init
-    ```
+4. Initialize the database:
+   ```bash
+   npm run db:init
+   ```
 
-5.  **Start the Server:**
-    ```bash
-    npm start
-    ```
+5. Start the server:
+   ```bash
+   npm start
+   ```
 
-## How to Use MAT
-*Once the server is running, follow these steps to share files with others on your network.*
+## How to Use on LAN
+Open the app using your IP address (not localhost):
+* Host: http://<YOUR_IP>:3000
+* Others: use the generated share link
 
-### 1. Accessing the App (Important!)
-To share files with others, you must access the app using your computer's **IP Address**, not `localhost`.
-*   **Note:** You do **NOT** need to change any code or configuration files. The app automatically detects the address you use in your browser.
+### Sharing a File
+1. Upload a file.
+2. Copy the generated link.
+3. Share it with others on your Wi-Fi/LAN.
 
-**Find your IP Address:**
-*   **Windows:** Open Command Prompt (`cmd`) -> type `ipconfig` -> look for **IPv4 Address** (e.g., `192.168.1.15`).
-*   **Mac/Linux:** Open Terminal -> type `ifconfig` -> look for `inet` address.
+### Troubleshooting
+* If others can’t open the link, allow Node.js through your firewall on port 3000.
 
-**Open in Browser:**
-*   **Host (You):** Go to `http://<YOUR_IP>:3000` (e.g., `http://192.168.1.15:3000`).
-*   **Others:** They will use the link you generate, which will look exactly like the one above.
-
-### 2. Sharing a File
-1.  **Upload:** Select your file (up to 500MB) and click upload.
-2.  **Get Link:** The app generates a unique link.
-3.  **Share:** Send this link to anyone on your Wi-Fi/LAN.
-
-### 3. Troubleshooting
-*   **Firewall:** If others cannot open the link, check your computer's firewall settings to ensure Node.js is allowed to accept incoming connections on port 3000.
+## Technologies Used
+* **Runtime:** [Node.js](https://nodejs.org/)
+* **Framework:** [Express.js](https://expressjs.com/)
+* **Database:** [MySQL](https://www.mysql.com/) + [Sequelize ORM](https://sequelize.org/)
+* **Templating:** [EJS](https://ejs.co/)
+* **File Handling:** [Multer](https://github.com/expressjs/multer)
+* **Security:** [Bcrypt](https://www.npmjs.com/package/bcrypt)
+* **Frontend:** HTML5, CSS3, JavaScript
 
 ## Security Note
-This application was developed as a learning project. While it implements standard security practices like password hashing, it is recommended to use it within a trusted local network environment.
+This application was developed as a learning project. Use it within a trusted local network.
