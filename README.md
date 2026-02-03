@@ -24,9 +24,9 @@ This project was submitted as my final project for **CS50x 2022**. It focuses on
 * Password-protected links
 * Download tracking
 
-## ✅ Two ways to try MAT
+## Two ways to try MAT
 
-### 1) 🧪 Live Demo (Render)
+### 1) 🧪 Live Demo
 Try the hosted demo here: https://mat-cs50.onrender.com/
 
 **Note:** This demo uses ephemeral storage. Data resets on restarts, so links may stop working.
