@@ -1,4 +1,4 @@
-# MAT - My Application Transfer
+# MAT: Local File Sharing (CS50)
 
 ![MAT Home Page](Images/main_page.png)
 
